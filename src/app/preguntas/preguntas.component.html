@@ -1,0 +1,42 @@
+<h3 class="text-lg font-bold text-white">{{ title }}</h3>
+
+<form class="flex flex-col gap-5" (submit)="sendDataQuestions($event)">
+  <ul class="flex flex-col gap-3 text-white">
+    @for (pregunta of preguntas; track pregunta.id){
+    <li>
+      <span class="font-semibold">{{ pregunta.id }}.</span>
+      {{ pregunta.pregunta }}
+
+      <fieldset>
+        <div class="flex flex-row gap-2 items-center">
+          <input
+            type="radio"
+            [name]="'respuesta-' + pregunta.id"
+            [id]="'si-' + pregunta.id"
+            [value]="pregunta.alternativas[0]"
+            [(ngModel)] = "respuestas[pregunta.id]"
+          />
+          <label [for]="'si-' + pregunta.id">{{
+            pregunta.alternativas[0]
+          }}</label>
+        </div>
+        <div class="flex flex-row gap-2 items-center">
+          <input
+            type="radio"
+            [name]="'respuesta-' + pregunta.id"
+            [id]="'no-' + pregunta.id"
+            [value]="pregunta.alternativas[1]"
+            [(ngModel)] = "respuestas[pregunta.id]"
+          />
+          <label [for]="'no-' + pregunta.id">{{
+            pregunta.alternativas[1]
+          }}</label>
+        </div>
+      </fieldset>
+    </li>
+    }
+  </ul>
+  <div class="flex flex-row gap-5 justify-start">
+  <button class="p-3 bg-white rounded cursor-pointer" type="submit">Enviar respuestas con un ❤️</button>
+  </div>
+</form>

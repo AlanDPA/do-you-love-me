@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AlertaBienvenidaComponent } from "./alerta-bienvenida/alerta-bienvenida.component";
+import { PreguntasComponent } from "./preguntas/preguntas.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [AlertaBienvenidaComponent, PreguntasComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+
 })
 export class AppComponent {
-  title = 'do-you-love-me';
+  title = 'Cita a ciegas';
 }
