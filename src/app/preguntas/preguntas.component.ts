@@ -5,9 +5,9 @@ import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-preguntas',
+  standalone:true,
   imports: [CommonModule, FormsModule,],
   templateUrl: './preguntas.component.html',
-  styles: ``,
 })
 export class PreguntasComponent {
   title = '¡Juguemos a las preguntas preguntonas!';

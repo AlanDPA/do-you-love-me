@@ -4,6 +4,7 @@ import { PreguntasComponent } from "./preguntas/preguntas.component";
 
 @Component({
   selector: 'app-root',
+  standalone:true,
   imports: [AlertaBienvenidaComponent, PreguntasComponent],
   templateUrl: './app.component.html',
 
